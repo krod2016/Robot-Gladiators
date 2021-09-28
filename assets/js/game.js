@@ -7,11 +7,6 @@ var enemyNames = ['Roborto', 'Amy Android', 'Robo Trumble'];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-console.log(enemyNames);
-console.log(enemyNames.length);
-console.log(enemyNames[0]);
-console.log(enemyNames[3]);
-
 // fight function (now with parameter for enemy's name)
 var fight = function(enemyName) {
   while (playerHealth > 0 && enemyHealth > 0)
@@ -22,6 +17,7 @@ var fight = function(enemyName) {
         window.alert(playerName + " has decided to skip this fight. Goodbye!");
         playerMoney = playerMoney - 10;
         console.log("playerMoney", playerMoney);
+        break;
       }
     }
 
@@ -37,6 +33,7 @@ var fight = function(enemyName) {
 
       // award player money for winning
       playerMoney = playerMoney + 20;
+      break;
     } else {
       window.alert(enemyName + ' still has ' + enemyHealth + ' health left.');
     }
@@ -50,10 +47,11 @@ var fight = function(enemyName) {
     // check player's health
     if (playerHealth <= 0) {
       window.alert(playerName + ' has died!');
+      break;
     } else {
       window.alert(playerName + ' still has ' + playerHealth + ' health left.');
     }
-  }
+  };
 
   // function to start game 
   var startGame =function() {
@@ -69,6 +67,7 @@ for (var i = 0; i < enemyNames.length; i++) {
   }
   else {
     window.alert("You have lost your robot in battle! Game Over!");
+    break;
       }
     }
     endGame();
@@ -90,7 +89,7 @@ else {
   else {
     window.alert("Thank you for playing Robot Gladiators! Come back soon!");
   }
-}
+};
 
   // start the game when the page loads
   startGame();
